@@ -25,7 +25,7 @@ function NavBar() {
       </a>
 
         <Favorite className="md:hidden flex" count={8} />
-
+        <ToggleSwitch/>
         {showNav ? <HiMenuAlt3
           onClick={() => setShowNav(!showNav)}
           className={(dark ? 'text-white' : null) + ' md:hidden block w-10 h-10 p-2 cursor-pointer' } />  :<HiMenuAlt2

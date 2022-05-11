@@ -1,12 +1,12 @@
 
 import React from "react";
   
-const ToggleSwitch = ({ label, handleDark, dark }) => {
+const ToggleSwitch = () => {
   return (
-  <label for="toggle-example">
-  <input type="checkbox" id="toggle-example" />
-  <div></div>
-  <span>Toggle me</span>
+  <label className="flex items-center cursor-pointer relative mb-4" htmlFor="toggle-switch">
+  <input type="checkbox" id="toggle-switch" className="sr-only"/>
+  <div className="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full"></div>
+  <span className="ml-3 text-gray-900 text-sm font-medium">Toggle me</span>
 </label>
   );
 };
