@@ -1,12 +1,13 @@
-
-  
-import React from "react";
+import React from 'react';
 import { HiHeart } from "react-icons/hi";
+
 
 const COMMON_STYLES =
   " flex justify-center items-center rounded-full text-white ";
 
 export default function CartNavigatorIcon({ count, className }) {
+
+
 
   return (
     <button

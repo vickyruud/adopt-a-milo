@@ -6,26 +6,47 @@ export const SiteContext = React.createContext();
 
 function App() {
 
-  const [dark, setDark] = useState(false)
+  //handles value for dark theme
+  const [dark, setDark] = useState(false);
 
-
-
-
+  //holds context values
   const siteContextValue = {
     dark,
     setDark
   }
 
+
+
   return (
     <SiteContext.Provider value={siteContextValue}>
-      <div>
-        <NavBar/>
-        <div className="container">
-          <article>
-            <h1 className="text-3xl font-bold underline">Adopt a Milo </h1>
+      <div className={dark ? 'bg-black' : null}>
+        <NavBar/>      
+          <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
+            Adopting a pet is Cool Beans!!
+        </article >
+        <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
+            Adopting a pet is Cool Beans!!
+        </article>
+        <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
+            Adopting a pet is Cool Beans!!
+        </article>
+        <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
+            Adopting a pet is Cool Beans!!
+        </article>
+        <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
             Adopting a pet is Cool Beans!!
           </article>
-        </div>
+          <article className={(dark ? "text-white " : null)}>
+            <h1 className={ (dark ? "text-white " : null) + " text-3xl font-bold underline"}>Adopt a Milo </h1>
+            Adopting a pet is Cool Beans!!
+          </article>
+
+       
       </div>
     </SiteContext.Provider>
   )

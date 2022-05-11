@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SiteContext } from '../App';
 
-function NavItem({content, href}) {
+
+function NavItem({ content, href }) {
+  
+  const { dark } = useContext(SiteContext);
+
   return (
-    <li className='text-lg font-semibold'>
+    <li className={(dark ? 'text-white' : null) + ' text-lg font-semibold'}>
       <a href={href}>{content}</a>
     </li>
   )
