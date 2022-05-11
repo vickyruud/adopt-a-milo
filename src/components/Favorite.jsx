@@ -1,7 +1,7 @@
 
   
 import React from "react";
-import { BsFillEmojiHeartEyesFill } from "react-icons/bs";
+import { HiHeart } from "react-icons/hi";
 
 const COMMON_STYLES =
   " flex justify-center items-center rounded-full text-white ";
@@ -12,7 +12,7 @@ export default function CartNavigatorIcon({ count, className }) {
     <button
       className={className + COMMON_STYLES + " relative w-8 h-8 bg-gray-900"}
     >
-      <BsFillEmojiHeartEyesFill />
+      <HiHeart />
       <div
         className={
           COMMON_STYLES +

@@ -26,7 +26,7 @@ function NavBar() {
         w-10 h-10 p-2 cursor-pointer'/>}
       </div>
       <ul className={(showNav ? "left-0" : "-left-full") + " md:static fixed  bottom-0 top-12 md:flex md:space-x-7 items-center md:bg-transparent md:text-gray-500 bg-gray-500 bg-opacity-90 md:w-auto w-10/12 text-white md:space-y-0 space-y-5 p-2 transition-left"}>
-        <NavItem content="home" href="/home" />
+        <NavItem content="Home" href="/home" />
         <NavItem content="Sign Up" href="/signup" />
         <NavItem content="Login" href="/signin" />
         <NavItem content="Logout" href="/logout" />
