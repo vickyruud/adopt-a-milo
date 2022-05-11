@@ -3,6 +3,7 @@ import Favorite from './Favorite';
 import NavItem from './NavItem';
 import { HiMenuAlt3, HiMenuAlt2 } from "react-icons/hi";
 import { SiteContext } from '../App';
+import ToggleSwitch from './ToggleSwitch';
 
 function NavBar() {
 
