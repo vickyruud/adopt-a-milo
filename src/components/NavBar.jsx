@@ -3,7 +3,7 @@ import Favorite from './Favorite';
 import NavItem from './NavItem';
 import { HiMenuAlt3, HiMenuAlt2 } from "react-icons/hi";
 import { SiteContext } from '../App';
-import ToggleSwitch from './ToggleSwitch';
+import { HiMoon, HiSun } from "react-icons/hi";
 
 function NavBar() {
 
@@ -20,10 +20,9 @@ function NavBar() {
   return (
     <nav className={(dark ? 'bg-black': 'bg-white') + ' md:flex justify-between items-center sticky top-0 z-20'}>
       <div className="flex items-center justify-between">
-      <a href='/'>
-        <img className='w-12 h-12 p-2' src='../milo.jpg' alt='logo' />
-      </a>
-
+        <a href='/'>
+          <img className='w-12 h-12 p-2' src='../milo.jpg' alt='logo' />
+        </a>
         <Favorite className="md:hidden flex" count={8} />
         {showNav ? <HiMenuAlt3
           onClick={() => setShowNav(!showNav)}
@@ -37,7 +36,11 @@ function NavBar() {
         <NavItem content="Sign Up" href="/signup" />
         <NavItem content="Login" href="/signin" />
         <NavItem content="Logout" href="/logout" />
-        <button onClick={() => handleDark()}  className={(dark ? 'text-white' : null) +  ' text-lg font-semibold'}>Enable Dark Theme</button>
+        <button
+          onClick={() => handleDark()}
+          className={(dark ? 'text-white' : null) + ' text-lg font-semibold'}>
+          {dark ? <HiSun /> : <HiMoon />}
+        </button>
         <Favorite className="hidden md:flex" count={8} />
 
       </ul>
