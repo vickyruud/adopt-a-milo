@@ -15,18 +15,13 @@ function App() {
     setDark,
   };
 
-  
-
-
   return (
     <SiteContext.Provider value={siteContextValue}>
-      <div className={dark ? "bg-black" : null}>
-        <NavBar /> 
-        <div  className={
-              (dark ? "text-white " : null) + "w-screen flex justify-center"
-            }>
-        <Carousel />
-       </div> 
+      <div className={dark ? "bg-gray-800" : null}>
+        <NavBar />
+        <div className="text-white flex justify-center bg-gray-800 border-b-2">
+          <Carousel />
+        </div>
         <article className={dark ? "text-white " : null}>
           <h1
             className={

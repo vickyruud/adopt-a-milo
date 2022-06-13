@@ -8,9 +8,14 @@ const images = [
 
 function Carousel() {
   return (
-    <div className="w-full select-none relative">
+    <div className="w-full select-none relative flex justify-center">
+      <div className="aspect-w-16 aspect-h-19">
       <img src={images[0]} alt="" />
-      <div className="absolute w-full top-1/2 -translate-y-1/2 py-2 bg-red-400"></div>
+      </div>
+      <div className="absolute w-full top-1/2 -translate-y-1/2 px-3 flex justify-between items-center">
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
     </div>
   )
 }

@@ -18,7 +18,7 @@ function NavBar() {
   }
 
   return (
-    <nav className={(dark ? 'bg-black': 'bg-white') + ' md:flex justify-between items-center sticky top-0 z-20'}>
+    <nav className={(dark ? 'bg-gray-800': 'bg-white') + ' md:flex justify-between items-center sticky top-0 z-20 border-b-2'}>
       <div className="flex items-center justify-between">
         <a href='/'>
           <img className='w-12 h-12 p-2' src='../milo.jpg' alt='logo' />
