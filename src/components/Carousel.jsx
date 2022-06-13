@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const images = [
   "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
@@ -6,15 +6,31 @@ const images = [
   "https://images.unsplash.com/photo-1609791636587-50feca5caee7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjN8fGRvZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
 ];
 
+let count = 0;
+
 function Carousel() {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleOnNextClick = () => {
+    count = (count + 1) % images.length;
+    console.log(count);
+    setCurrentIndex(count);
+  }
+
+  const handleOnPrevClick = () => {
+    count = (count - 1) % images.length;
+    setCurrentIndex(count);
+
+  }
   return (
     <div className="w-full select-none relative flex justify-center">
       <div className="aspect-w-16 aspect-h-19">
-      <img src={images[0]} alt="" />
+      <img className="h-96" src={images[currentIndex]} alt="" />
       </div>
       <div className="absolute w-full top-1/2 -translate-y-1/2 px-3 flex justify-between items-center">
-        <button>Previous</button>
-        <button>Next</button>
+        <button onClick={handleOnPrevClick}>Previous</button>
+        <button onClick={handleOnNextClick}>Next</button>
       </div>
     </div>
   )
