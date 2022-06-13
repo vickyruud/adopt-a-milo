@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const images = [
   "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
@@ -14,8 +14,8 @@ function Carousel() {
 
   const handleOnNextClick = () => {
     count = (count + 1) % images.length;
-    console.log(count);
     setCurrentIndex(count);
+    carouselRef.current.classList.add('fade-anim')
   }
 
   const handleOnPrevClick = () => {
@@ -23,8 +23,27 @@ function Carousel() {
     setCurrentIndex(count);
 
   }
+
+  const startCarousel = () => {
+    setInterval(() => {
+      handleOnNextClick()
+    }, 3000)
+  }
+
+  const carouselRef = useRef()
+
+  const removeAnimation = () => {
+    carouselRef.current.classList.remove("fade-anim");
+  }
+
+  useEffect(() => {
+    carouselRef.current.addEventListener('animationed', removeAnimation)
+    // startCarousel();
+  }, [])
+
+
   return (
-    <div className="w-full select-none relative flex justify-center">
+    <div ref={carouselRef} className="w-full select-none relative flex justify-center">
       <div className="aspect-w-16 aspect-h-19">
       <img className="h-96" src={images[currentIndex]} alt="" />
       </div>
